@@ -33,7 +33,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		<table width="100%" border="0" cellspacing="0" cellpadding="0" align="center">
 		  <tr>
 		    <td bgcolor="#f1f1f6" height="53" valign="center">
-			<p align="center">Copyright &copy;2026 农产品电商服务平台<br>
+			<p align="center">Copyright &copy;2026 农产品溯源电商服务平台<br>
 			</td>
 		  </tr>
 		</table>

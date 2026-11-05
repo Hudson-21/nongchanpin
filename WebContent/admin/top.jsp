@@ -66,7 +66,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				  </tr>
 				</table>
 				<%} else { %>
-				 <table width="100%" border="0" cellspacing="0" cellpadding="0"><tr><td height="32" align="left"><span style="color:#D8E6DC;font-size:13px;">农产品电商服务平台 · 后台管理</span></td></tr></table>
+				 <table width="100%" border="0" cellspacing="0" cellpadding="0"><tr><td height="32" align="left"><span style="color:#D8E6DC;font-size:13px;">农产品溯源电商服务平台 · 后台管理</span></td></tr></table>
 				<%} %>
 				<!-- 如果登陆 结束 -->
 		    </td>
@@ -76,7 +76,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		<table cellspacing="1" cellpadding="3" align="center" border="0" width="98%">
 		<tr>
 		<td width="65%"><BR>
-		>> 欢迎访问 <b>农产品电商服务平台后台</b> </td>
+		>> 欢迎访问 <b>农产品溯源电商服务平台后台</b> </td>
 		<td width="35%" align="right">
 			
 		</td></tr></table>

@@ -45,7 +45,7 @@ align=center>
       <TABLE border=0 cellSpacing=0 cellPadding=0 width="83%" height=65>
         <TBODY>
         <TR>
-          <TD height=34>公司地址:农产品电商服务平台 &nbsp; 
+          <TD height=34>公司地址:农产品溯源电商服务平台 &nbsp; 
             客服信箱:88888888@163.com<BR>全国统一订购电话：400-888-8888；18888888888 &nbsp; 
             QQ: 88888888 <BR><A href="" 
             target=_blank>京ICP备88888888号</A> 

@@ -14,14 +14,14 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   <head>
     <base href="<%=basePath%>">
     
-    <title>农产品电商服务平台</title>
+    <title>农产品溯源电商服务平台</title>
     
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta http-equiv="pragma" content="no-cache">
 	<meta http-equiv="cache-control" content="no-cache">
 	<meta http-equiv="expires" content="0">    
 	<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
-	<meta http-equiv="description" content="农产品电商服务平台">
+	<meta http-equiv="description" content="农产品溯源电商服务平台">
 	<!--
 	<link rel="stylesheet" type="text/css" href="styles.css">
 	-->

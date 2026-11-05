@@ -1,4 +1,4 @@
-# 农产品电商服务平台（nongchanpin）测试报告
+# 农产品溯源电商服务平台（nongchanpin）测试报告
 
 - 测试时间：2026-09-22
 - 测试环境：Windows 11 / JDK 1.8.0_501 / Tomcat 9.0.122 / MySQL 8.0.28 / IDEA 2025.3.3 社区版 + Smart Tomcat
@@ -29,7 +29,7 @@
 ### 1. 前台公开页面
 | 页面 | 结果 |
 |---|---|
-| /index.jsp | 200（37987 字节，标题“农产品电商服务平台”） |
+| /index.jsp | 200（37987 字节，标题“农产品溯源电商服务平台”） |
 | /login.jsp、/register.jsp、/notices.jsp、/msg.jsp、/help.jsp、/productmore.jsp、/hotsales.jsp、/search.jsp、/admin/login.jsp、/noticeDetail.jsp?id=1 | 全部 200 |
 | /productDetail.jsp?id=1 | 失败（库中无 id=1 的商品，实际商品 id 从 30 起；换真实 id 后正常，非功能缺陷） |
 

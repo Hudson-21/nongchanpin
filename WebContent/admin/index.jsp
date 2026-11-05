@@ -72,7 +72,7 @@ int lowStockShown = lowStock.size() > 6 ? 6 : lowStock.size();
   <head>
     <base href="<%=basePath%>">
 
-    <title>农产品电商服务平台后台管理</title>
+    <title>农产品溯源电商服务平台后台管理</title>
 
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -80,7 +80,7 @@ int lowStockShown = lowStock.size() > 6 ? 6 : lowStock.size();
 	<meta http-equiv="cache-control" content="no-cache">
 	<meta http-equiv="expires" content="0">
 	<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
-	<meta http-equiv="description" content="农产品电商服务平台后台管理">
+	<meta http-equiv="description" content="农产品溯源电商服务平台后台管理">
 	<LINK href="/nongchanpin/admin/css/test.css" rel=stylesheet>
 	<script language = "JavaScript" src = "/nongchanpin/admin/js/test.js"></script>
   <link rel="stylesheet" type="text/css" href="/nongchanpin/admin/css/admin-ui.css">
