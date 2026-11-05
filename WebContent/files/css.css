@@ -1,0 +1,219 @@
+TD {
+	LINE-HEIGHT: 120%; COLOR: #353535; FONT-SIZE: 9pt
+}
+BODY {
+	LINE-HEIGHT: 120%; FONT-SIZE: 9pt
+}
+A:link {
+	COLOR: #000000; TEXT-DECORATION: none
+}
+A:visited {
+	COLOR: #000000; TEXT-DECORATION: none
+}
+A:active {
+	COLOR: #000000; TEXT-DECORATION: none
+}
+A:hover {
+	POSITION: relative; COLOR: #0099cc; TOP: 0px; RIGHT: 0px; TEXT-DECORATION: none
+}
+.wenbenkuang {
+	BORDER-BOTTOM: #999999 1px solid; BORDER-LEFT: #999999 1px solid; FONT-FAMILY: "?????"; COLOR: #333333; FONT-SIZE: 9pt; BORDER-TOP: #999999 1px solid; BORDER-RIGHT: #999999 1px solid
+}
+.go-wenbenkuang {
+	BORDER-BOTTOM: #666666 1px solid; BORDER-LEFT: #ffffff 1px solid; PADDING-BOTTOM: 1px; BACKGROUND-COLOR: #eeeeee; PADDING-LEFT: 1px; PADDING-RIGHT: 1px; FONT-FAMILY: "?????"; HEIGHT: 19px; COLOR: #333333; FONT-SIZE: 9pt; BORDER-TOP: #ffffff 1px solid; CURSOR: hand; BORDER-RIGHT: #666666 1px solid; PADDING-TOP: 1px
+}
+.table-zuoyou {
+	BORDER-LEFT: #cccccc 1px solid; BORDER-RIGHT: #cccccc 1px solid
+}
+.table-shangxia {
+	BORDER-BOTTOM: #cccccc 1px solid; BORDER-TOP: #cccccc 1px solid
+}
+.table-you {
+	BORDER-RIGHT: #cccccc 1px solid
+}
+.table-zuo {
+	BORDER-LEFT: #cccccc 1px solid
+}
+.table-shang {
+	BORDER-TOP: #cccccc 1px solid
+}
+.table-xia {
+	BORDER-BOTTOM: #cccccc 1px solid
+}
+.table-xu {
+	BORDER-BOTTOM: #cccccc 1px dotted
+}
+
+/* ================= 登录提示条 ================= */
+.loginTip {
+	MARGIN: 8px 0;
+	PADDING: 8px 10px;
+	BACKGROUND: #FFF7E6;
+	BORDER: 1px solid #F5C26B;
+	COLOR: #8A5A00;
+	FONT-SIZE: 12px;
+}
+
+/* ================= 商品卡（列表页统一栅格） =================
+   原结构：200px 卡片 > 110px 表 > 90x90 灰框 > 150x150 图。
+   图片比灰框大 60px，会溢出压到相邻卡片；不同原图自带留白不同，
+   看起来就是"大小不一、位置错位"。这里统一为：
+   卡片定宽、图片固定 180x180 白底 contain（不裁切不变形）、
+   卡片内所有 table/td 取消固定宽高与灰底。                      */
+DIV[style*="200px"] {
+	WIDTH: 196px !important;
+	HEIGHT: auto !important;
+	MARGIN: 0 2px 14px 2px !important;   /* 原 marign:3px 是拼写错误，间距从未生效 */
+	FLOAT: left !important;
+	TEXT-ALIGN: center;
+	BOX-SIZING: border-box;
+	VERTICAL-ALIGN: top;
+}
+DIV[style*="200px"] TABLE {
+	WIDTH: 100% !important;
+	HEIGHT: auto !important;
+	BACKGROUND: transparent !important;
+}
+DIV[style*="200px"] TD {
+	WIDTH: auto !important;
+	HEIGHT: auto !important;
+	PADDING: 0 !important;
+	BACKGROUND: transparent !important;
+	VERTICAL-ALIGN: top;
+}
+/* 只命中商品主图（150x150），不影响卡片里的"我要订购"小图标 */
+DIV[style*="200px"] IMG[width="150"] {
+	WIDTH: 180px !important;
+	HEIGHT: 180px !important;
+	OBJECT-FIT: contain;
+	BACKGROUND: #ffffff;
+	BORDER: 1px solid #E5E5E5;
+	PADDING: 2px;
+	BOX-SIZING: content-box;
+	DISPLAY: block;
+	MARGIN: 0 auto 6px auto;
+}
+/* 每 4 张一组的行容器独立成排：不满一行时左对齐，不被浮动挤到中间 */
+DIV[style*="800px"] > DIV { OVERFLOW: hidden; }
+
+/* 商品详情页主图样式已收敛到 productDetail.jsp 的内联样式（单一来源），此处不再重复定义 */
+
+/* ================= 窄屏适配层（<=768px） =================
+   说明：站点为表格布局 + 固定 1006px，桌面端视觉保持不变；
+   仅在窄屏把外层容器改为流式、侧栏隐藏、内容区自适应，
+   宽数据表格改为容器内横向滚动，避免整页左右拖动。          */
+@media (max-width: 768px) {
+
+	HTML, BODY { WIDTH: 100%; }
+
+	/* 1. 外层容器：1006 固定宽 -> 流式 */
+	TABLE[width="1006"] { WIDTH: 100% !important; }
+
+	/* 2. 主区与侧栏改为块级堆叠；侧栏在手机上隐藏（导航中已有公告/留言入口） */
+	TABLE[width="1006"] > TBODY > TR > TD[width="188"] { DISPLAY: none; }
+	TABLE[width="1006"] > TBODY > TR > TD[width="787"] {
+		DISPLAY: block;
+		WIDTH: 100% !important;
+		BOX-SIZING: border-box;
+	}
+
+	/* 3. 内容区固定 800px -> 自适应；宽表在此容器内横向滚动 */
+	DIV[style*="800px"] {
+		WIDTH: auto !important;
+		OVERFLOW-X: auto;
+		-webkit-overflow-scrolling: touch;
+	}
+
+	/* 4. 商品卡：两列排布（覆盖桌面的定宽与外边距，改用内边距控制间距） */
+	DIV[style*="200px"] {
+		WIDTH: 50% !important;
+		MARGIN: 0 0 12px 0 !important;
+		PADDING: 0 4px;
+		BOX-SIZING: border-box;
+	}
+	DIV[style*="200px"] IMG[width="150"] {
+		WIDTH: 100% !important;
+		MAX-WIDTH: 180px !important;
+	}
+
+	/* 5. 图片不再溢出容器，并保持比例（同时修正桌面端 150x150 强制拉伸） */
+	IMG { MAX-WIDTH: 100%; HEIGHT: auto; }
+
+	/* 6. 导航搜索框占满一行，便于触控输入 */
+	#proname {
+		WIDTH: 100% !important;
+		BOX-SIZING: border-box;
+		HEIGHT: 30px;
+		PADDING: 0 6px;
+		MARGIN-TOP: 6px;
+	}
+
+	/* 7. 触控目标：图片按钮撑出可点区域 */
+	A > IMG[src*="icon_buy"], A > IMG[src*="index_29"] {
+		MIN-HEIGHT: 30px;
+		WIDTH: auto !important;
+	}
+}
+
+@media (max-width: 768px) {
+	/* 商品名超长时在卡片内换行 */
+	DIV[style*="200px"] TD { WORD-BREAK: break-all; }
+	/* 导航区收紧留白 */
+	TABLE[background*="bgtop"] TD { PADDING: 4px 0; }
+	/* 区块标题右侧的 more 不拆成两行 */
+	TABLE TD[width="10%"] { WHITE-SPACE: nowrap; }
+}
+
+/* 手机竖屏（<=480px）：商品卡改单列，避免两列挤到溢出 */
+@media (max-width: 480px) {
+	DIV[style*="200px"] {
+		WIDTH: 100% !important;
+		FLOAT: none !important;
+		MAX-WIDTH: 100%;
+		MARGIN: 0 0 12px 0 !important;
+	}
+	DIV[style*="200px"] IMG[width="150"] {
+		MAX-WIDTH: 240px !important;
+		HEIGHT: 240px !important;
+	}
+}
+
+@media (max-width: 768px) {
+	/* 导航条高度改为自适应，避免出现大片空绿块 */
+	TABLE[background*="bgtop"] { HEIGHT: auto !important; }
+}
+
+@media (max-width: 768px) {
+	/* 图片按钮不要拉伸，改用内边距扩大可点区域 */
+	A > IMG[src*="icon_buy"], A > IMG[src*="index_29"] {
+		MIN-HEIGHT: 0 !important;
+		WIDTH: auto !important;
+		PADDING: 7px 0;
+		BOX-SIZING: content-box;
+	}
+}
+
+@media (max-width: 768px) {
+	/* 详情页两栏改上下堆叠（主图列现在是固定 320px 宽） */
+	TABLE TD[width="320"] {
+		DISPLAY: block !important;
+		WIDTH: 100% !important;
+	}
+
+	/* 触控目标：按钮与输入框最小高度 */
+	INPUT[type="submit"], INPUT[type="reset"] {
+		MIN-HEIGHT: 34px;
+		MIN-WIDTH: 76px;
+	}
+	INPUT[type="text"], INPUT[type="password"] {
+		MIN-HEIGHT: 30px;
+	}
+}
+
+@media (max-width: 480px) {
+	/* 详情页信息区在窄屏改为整行，避免与主图挤成两列 */
+	DIV[style*="800px"] TABLE TD[colspan="3"][valign="top"] {
+		DISPLAY: block !important;
+		WIDTH: 100% !important;
+	}
+}

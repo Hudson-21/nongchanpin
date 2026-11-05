@@ -1,0 +1,204 @@
+/* =============================================================
+   admin-ui.css —— 后台视觉层（作用域 .ui-a）
+   只覆盖样式，不动结构与逻辑；未加 .ui-a 的页面保持原样。
+   ============================================================= */
+
+.ui-a {
+	--brand-600: #276749;
+	--brand-700: #1F5438;
+	--line: #E5E7EB;
+	--text-900: #1F2937;
+	--text-600: #4B5563;
+	--text-400: #9CA3AF;
+	BACKGROUND: #F5F6F8;
+	FONT-FAMILY: "Microsoft YaHei", "PingFang SC", "Helvetica Neue", Arial, sans-serif;
+	FONT-SIZE: 13px;
+	COLOR: var(--text-900);
+	LINE-HEIGHT: 1.6;
+}
+.ui-a TD { FONT-SIZE: 13px; FONT-FAMILY: "Microsoft YaHei", "PingFang SC", Arial, sans-serif; }
+.ui-a A { COLOR: var(--text-600); TEXT-DECORATION: none; }
+.ui-a A:hover { COLOR: var(--brand-600); }
+
+/* 顶部：logo 条 + 导航条 */
+.ui-a #table2 { BACKGROUND: #FFFFFF; BORDER-BOTTOM: 1px solid var(--line); }
+.ui-a TD[background*="top_bg"],
+.ui-a TD[background*="top_r"] { BACKGROUND: #FFFFFF !important; }
+.ui-a TD[background*="dh_bg"] {
+	BACKGROUND: var(--brand-700) !important;
+	HEIGHT: 44px !important;
+	PADDING: 0 16px;
+}
+.ui-a TD[background*="dh_bg"] A,
+.ui-a TD[background*="dh_bg"] FONT {
+	COLOR: #D8E6DC !important;
+	FONT-SIZE: 13px !important;
+	FONT-WEIGHT: 400 !important;
+}
+.ui-a TD[background*="dh_bg"] A:hover,
+.ui-a TD[background*="dh_bg"] A:hover FONT { COLOR: #FFFFFF !important; }
+
+/* 面包屑 */
+.ui-a .tableBorder2 {
+	WIDTH: 100%;
+	BACKGROUND: #FFFFFF;
+	BORDER: 0;
+	BORDER-BOTTOM: 1px solid var(--line);
+}
+.ui-a .tableBorder2 TD { PADDING: 10px 14px !important; COLOR: var(--text-600); }
+.ui-a .tableBorder2 A { COLOR: var(--brand-600); }
+
+/* 数据表格 */
+.ui-a .tableborder1,
+.ui-a .tableBorder1 {
+	WIDTH: 100%;
+	BORDER-COLLAPSE: collapse;
+	BORDER: 0;
+	BACKGROUND: transparent;
+}
+.ui-a .tableborder1 TD,
+.ui-a .tableBorder1 TD {
+	PADDING: 9px 10px;
+	BORDER-BOTTOM: 1px solid #EEF0F2;
+	COLOR: var(--text-900);
+}
+.ui-a TD[background*="bg2.gif"] { BACKGROUND: #F7F8FA !important; }
+.ui-a TD[background*="bg2.gif"] FONT { COLOR: #4B5563 !important; FONT-WEIGHT: 500; }
+.ui-a .tablebody1 { BACKGROUND: #FFFFFF !important; }
+.ui-a .tablebody2 { BACKGROUND: #FBFCFC !important; }
+.ui-a .tableborder1 TR:hover TD { BACKGROUND: #FAFBFB; }
+
+/* 表单控件 */
+.ui-a INPUT[type="text"],
+.ui-a INPUT[type="password"],
+.ui-a SELECT {
+	HEIGHT: 32px;
+	PADDING: 0 10px;
+	BORDER: 1px solid var(--line);
+	BORDER-RADIUS: 6px;
+	BACKGROUND: #FFFFFF;
+	FONT-SIZE: 13px;
+	COLOR: var(--text-900);
+	BOX-SIZING: border-box;
+}
+.ui-a TEXTAREA {
+	PADDING: 8px 10px;
+	BORDER: 1px solid var(--line);
+	BORDER-RADIUS: 6px;
+	FONT-SIZE: 13px;
+	BOX-SIZING: border-box;
+}
+.ui-a INPUT[type="text"]:focus,
+.ui-a INPUT[type="password"]:focus,
+.ui-a SELECT:focus,
+.ui-a TEXTAREA:focus {
+	BORDER-COLOR: var(--brand-600);
+	OUTLINE: none;
+	BOX-SHADOW: 0 0 0 3px rgba(39, 103, 73, .1);
+}
+.ui-a INPUT[type="submit"],
+.ui-a INPUT[type="button"] {
+	HEIGHT: 32px;
+	PADDING: 0 18px;
+	BORDER: 0;
+	BORDER-RADIUS: 6px;
+	BACKGROUND: var(--brand-600);
+	COLOR: #FFFFFF;
+	FONT-SIZE: 13px;
+	CURSOR: pointer;
+}
+.ui-a INPUT[type="submit"]:hover,
+.ui-a INPUT[type="button"]:hover { BACKGROUND: var(--brand-700); }
+.ui-a INPUT[type="reset"] {
+	HEIGHT: 32px;
+	PADDING: 0 16px;
+	BORDER: 1px solid var(--line);
+	BORDER-RADIUS: 6px;
+	BACKGROUND: #FFFFFF;
+	COLOR: var(--text-600);
+	CURSOR: pointer;
+}
+
+/* 页脚 */
+.ui-a #footer,
+.ui-a .footer { COLOR: var(--text-400); FONT-SIZE: 12px; }
+
+/* logo 条：隐藏旧位图，改用文字标识 */
+.ui-a #table2 TD:first-child IMG { DISPLAY: none; }
+.ui-a #table2 TD:first-child { WIDTH: auto !important; PADDING: 12px 16px; }
+.ui-a #table2 TD:first-child::after {
+	CONTENT: "农产品电商服务平台";
+	FONT-SIZE: 18px;
+	FONT-WEIGHT: 500;
+	COLOR: var(--brand-700);
+	LETTER-SPACING: .5px;
+}
+.ui-a #table2 TD { HEIGHT: 56px; VERTICAL-ALIGN: middle; }
+
+/* 页脚装饰带与版权 */
+.ui-a TD[background*="bot_bg"] {
+	BACKGROUND: #FFFFFF !important;
+	HEIGHT: 0 !important;
+	PADDING: 0 !important;
+	FONT-SIZE: 0;
+	LINE-HEIGHT: 0;
+}
+.ui-a TD[bgcolor="#f1f1f6"] {
+	BACKGROUND: #FFFFFF !important;
+	HEIGHT: auto !important;
+	PADDING: 14px 0;
+	COLOR: var(--text-400) !important;
+	FONT-SIZE: 12px;
+}
+
+/* 登录页：收成一张卡片 */
+.ui-a.ui-login .tableborder1 {
+	WIDTH: 480px !important;
+	MAX-WIDTH: 90%;
+	MARGIN: 26px auto 0 auto;
+	BACKGROUND: #FFFFFF;
+	BORDER: 1px solid var(--line);
+	BORDER-RADIUS: 12px;
+	PADDING: 6px 4px 18px;
+}
+.ui-a.ui-login .tableborder1 TD { BORDER-BOTTOM: 0; PADDING: 8px 16px; }
+.ui-a.ui-login .tableborder1 TR:first-child TD {
+	BACKGROUND: transparent !important;
+	TEXT-ALIGN: center;
+	PADDING: 20px 16px 10px;
+	FONT-SIZE: 15px !important;
+	FONT-WEIGHT: 500;
+	COLOR: var(--text-900) !important;
+}
+.ui-a.ui-login .tableborder1 INPUT[type="text"],
+.ui-a.ui-login .tableborder1 INPUT[type="password"] { WIDTH: 240px; }
+.ui-a.ui-login .tableborder1 INPUT[type="submit"] { WIDTH: 100%; HEIGHT: 38px; }
+
+/* logo 文字块宽度修正（否则 td 过窄会把字竖排） */
+.ui-a #table2 TD:first-child {
+	WIDTH: 210px !important;
+	WHITE-SPACE: nowrap;
+	VERTICAL-ALIGN: middle;
+}
+
+/* 表头与图标细节 */
+.ui-a .tableborder1 TR:first-child TD {
+	BACKGROUND: #F3F4F6 !important;
+	BORDER-BOTTOM: 1px solid var(--line);
+	COLOR: #4B5563 !important;
+}
+.ui-a IMG[src*="dog.gif"],
+.ui-a IMG[src*="Forum_nav.gif"] { DISPLAY: none; }
+
+/* 越权提示 */
+.ui-a .dashNotice {
+	WIDTH: 97%;
+	MARGIN: 10px auto 0 auto;
+	PADDING: 10px 14px;
+	BACKGROUND: #FFF7E6;
+	BORDER: 1px solid #F5C26B;
+	BORDER-RADIUS: 8px;
+	COLOR: #8A5A00;
+	FONT-SIZE: 13px;
+	BOX-SIZING: border-box;
+}

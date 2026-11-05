@@ -1,0 +1,609 @@
+/* =============================================================
+   ui.css —— 视觉升级层（v2）
+   作用域：<body class="ui-v2">，目前仅 index.jsp / productDetail.jsp 启用。
+   原则：只覆盖视觉，不改结构、不动业务逻辑；其他页面保持原样。
+   ============================================================= */
+
+.ui-v2 {
+	--brand-600: #276749;
+	--brand-700: #1F5438;
+	--brand-50: #E9F3EE;
+	--price: #C0392B;
+	--text-900: #1F2937;
+	--text-600: #4B5563;
+	--text-400: #9CA3AF;
+	--line: #E5E7EB;
+	--bg-soft: #F7F8FA;
+
+	FONT-FAMILY: "Microsoft YaHei", "PingFang SC", "Helvetica Neue", Arial, sans-serif;
+	FONT-SIZE: 14px;
+	LINE-HEIGHT: 1.6;
+	COLOR: var(--text-900);
+	BACKGROUND-COLOR: #FFFFFF;
+}
+
+.ui-v2 TD, .ui-v2 DIV, .ui-v2 P, .ui-v2 A, .ui-v2 FONT, .ui-v2 SPAN, .ui-v2 STRONG {
+	FONT-FAMILY: "Microsoft YaHei", "PingFang SC", "Helvetica Neue", Arial, sans-serif;
+}
+.ui-v2 TD { FONT-SIZE: 14px; LINE-HEIGHT: 1.7; COLOR: var(--text-900); }
+.ui-v2 A { COLOR: var(--text-900); TEXT-DECORATION: none; }
+.ui-v2 A:hover { COLOR: var(--brand-600); }
+
+/* ---------- 顶部导航 ---------- */
+.ui-v2 TABLE[background*="bgtop"] {
+	BACKGROUND: var(--brand-600) !important;
+	HEIGHT: 46px !important;
+}
+.ui-v2 TABLE[background*="bgtop"] TD {
+	COLOR: rgba(255, 255, 255, .35);
+	PADDING: 0 2px;
+	VERTICAL-ALIGN: middle;
+}
+.ui-v2 TABLE[background*="bgtop"] A,
+.ui-v2 TABLE[background*="bgtop"] A FONT {
+	COLOR: #FFFFFF !important;
+	FONT-SIZE: 14px;
+	TEXT-DECORATION: none;
+}
+.ui-v2 TABLE[background*="bgtop"] A:hover,
+.ui-v2 TABLE[background*="bgtop"] A:hover FONT { COLOR: #CDE7D8 !important; }
+
+.ui-v2 #proname {
+	WIDTH: 150px;
+	HEIGHT: 30px;
+	PADDING: 0 14px;
+	BORDER: 0;
+	BORDER-RADIUS: 15px;
+	BACKGROUND: rgba(255, 255, 255, .95);
+	FONT-SIZE: 13px;
+	VERTICAL-ALIGN: middle;
+	OUTLINE: none;
+}
+.ui-v2 #proname:focus { BOX-SHADOW: 0 0 0 3px rgba(255, 255, 255, .35); }
+.ui-v2 TABLE[background*="bgtop"] INPUT[type="submit"] {
+	HEIGHT: 30px;
+	PADDING: 0 14px;
+	BORDER: 0;
+	BORDER-RADIUS: 15px;
+	BACKGROUND: #FFFFFF;
+	COLOR: var(--brand-700);
+	FONT-SIZE: 13px;
+	FONT-WEIGHT: 500;
+	CURSOR: pointer;
+	VERTICAL-ALIGN: middle;
+	MARGIN-LEFT: 6px;
+	WHITE-SPACE: nowrap;
+}
+.ui-v2 TABLE[background*="bgtop"] INPUT[type="submit"]:hover { BACKGROUND: #E9F3EE; }
+
+/* 登录 / 注册 / 我的订单 一行 */
+.ui-v2 .topbar { PADDING: 7px 10px 9px 10px; }
+.ui-v2 .topbar TD { PADDING: 0; LINE-HEIGHT: 1.5; }
+.ui-v2 .topbar A { FONT-SIZE: 13px; COLOR: var(--text-600); }
+.ui-v2 .topbar A FONT { COLOR: var(--text-600) !important; }
+.ui-v2 .topbar A:hover, .ui-v2 .topbar A:hover FONT { COLOR: var(--brand-600) !important; }
+.ui-v2 .topbar-links A { FONT-SIZE: 13px; COLOR: var(--text-600); }
+
+/* ---------- 区块标题条 ---------- */
+.ui-v2 TD[background*="bgtop"] {
+	BACKGROUND: var(--bg-soft) !important;
+	BORDER-LEFT: 3px solid var(--brand-600);
+	HEIGHT: auto !important;
+}
+.ui-v2 TD[background*="bgtop"] TD { PADDING: 11px 12px !important; COLOR: var(--text-900); }
+.ui-v2 TD[background*="bgtop"] STRONG { FONT-SIZE: 16px; FONT-WEIGHT: 500; COLOR: var(--text-900); }
+.ui-v2 TD[background*="bgtop"] FONT { COLOR: inherit !important; }
+.ui-v2 TD[background*="bgtop"] .moreLink { COLOR: var(--brand-600) !important; FONT-SIZE: 13px; WHITE-SPACE: nowrap; DISPLAY: inline-block; }
+.ui-v2 TD[background*="bgtop"] TD[width="10%"] { WIDTH: auto !important; WHITE-SPACE: nowrap; }
+
+/* ---------- 商品卡 ---------- */
+.ui-v2 .pcard-wrap { OVERFLOW: hidden; PADDING: 6px 0 0 0; }
+.ui-v2 .pcard {
+	FLOAT: left;
+	WIDTH: 194px;
+	MARGIN: 0 3px 16px 3px;
+	PADDING: 10px 10px 12px 10px;
+	BOX-SIZING: border-box;
+	BORDER: 1px solid var(--line);
+	BORDER-RADIUS: 10px;
+	BACKGROUND: #FFFFFF;
+	TEXT-ALIGN: center;
+	TRANSITION: border-color .18s ease, box-shadow .18s ease;
+}
+.ui-v2 .pcard:hover {
+	BORDER-COLOR: #C7D8C8;
+	BOX-SHADOW: 0 6px 18px rgba(31, 41, 55, .08);
+}
+.ui-v2 .pcard-pic {
+	DISPLAY: block;
+	HEIGHT: 168px;
+	BORDER-RADIUS: 8px;
+	BACKGROUND: var(--bg-soft);
+	OVERFLOW: hidden;
+}
+.ui-v2 .pcard-pic IMG {
+	DISPLAY: block;
+	WIDTH: 100%;
+	HEIGHT: 100%;
+	OBJECT-FIT: contain;
+}
+.ui-v2 .pcard-name {
+	DISPLAY: block;
+	HEIGHT: 42px;
+	OVERFLOW: hidden;
+	MARGIN-TOP: 10px;
+	FONT-SIZE: 13px;
+	LINE-HEIGHT: 1.6;
+	COLOR: var(--text-900);
+	TEXT-ALIGN: left;
+}
+.ui-v2 .pcard-name:hover { COLOR: var(--brand-600); }
+.ui-v2 .pcard-price { MARGIN: 6px 0 0 0; TEXT-ALIGN: left; LINE-HEIGHT: 1.2; }
+.ui-v2 .pcard-price .now { FONT-SIZE: 18px; FONT-WEIGHT: 500; COLOR: var(--price); }
+.ui-v2 .pcard-price .now I { FONT-SIZE: 12px; FONT-STYLE: normal; MARGIN-LEFT: 1px; }
+.ui-v2 .pcard-price .was {
+	FONT-SIZE: 12px;
+	COLOR: var(--text-400);
+	TEXT-DECORATION: line-through;
+	MARGIN-LEFT: 6px;
+}
+.ui-v2 .pcard-btn {
+	DISPLAY: block;
+	HEIGHT: 32px;
+	LINE-HEIGHT: 32px;
+	MARGIN-TOP: 10px;
+	BORDER-RADIUS: 6px;
+	BACKGROUND: var(--brand-600);
+	COLOR: #FFFFFF !important;
+	FONT-SIZE: 13px;
+	TEXT-ALIGN: center;
+}
+.ui-v2 .pcard-btn:hover { BACKGROUND: var(--brand-700); COLOR: #FFFFFF !important; }
+
+/* ---------- 左侧信息栏 ---------- */
+.ui-v2 .sidebox { BORDER: 1px solid var(--line); BORDER-RADIUS: 10px; OVERFLOW: hidden; }
+.ui-v2 .sidebox TD { FONT-SIZE: 13px; }
+
+/* ---------- 商品详情 ---------- */
+.ui-v2 .picBox {
+	BORDER: 1px solid var(--line);
+	BORDER-RADIUS: 10px;
+	BACKGROUND: var(--bg-soft);
+	PADDING: 12px;
+}
+.ui-v2 #img { BORDER: 0; BORDER-RADIUS: 6px; BACKGROUND: transparent; PADDING: 0; }
+.ui-v2 .pdetail-name {
+	MARGIN: 0 0 4px 0;
+	FONT-SIZE: 20px;
+	FONT-WEIGHT: 500;
+	LINE-HEIGHT: 1.45;
+	COLOR: var(--text-900);
+}
+.ui-v2 .pmeta { FONT-SIZE: 12px; COLOR: var(--text-400); LETTER-SPACING: .3px; }
+.ui-v2 .pdetail-price { MARGIN: 10px 0 14px 0; LINE-HEIGHT: 1.2; }
+.ui-v2 .pdetail-price .now { FONT-SIZE: 30px; FONT-WEIGHT: 500; COLOR: var(--price); }
+.ui-v2 .pdetail-price .now I { FONT-SIZE: 14px; FONT-STYLE: normal; MARGIN-LEFT: 2px; }
+.ui-v2 .pdetail-price .was {
+	FONT-SIZE: 13px;
+	COLOR: var(--text-400);
+	TEXT-DECORATION: line-through;
+	MARGIN-LEFT: 10px;
+}
+.ui-v2 .pbtn-ghost {
+	DISPLAY: inline-block;
+	HEIGHT: 26px;
+	LINE-HEIGHT: 24px;
+	PADDING: 0 12px;
+	BORDER: 1px solid var(--line);
+	BORDER-RADIUS: 13px;
+	COLOR: var(--text-600) !important;
+	FONT-SIZE: 12px;
+}
+.ui-v2 .pbtn-ghost:hover { BORDER-COLOR: var(--brand-600); COLOR: var(--brand-600) !important; }
+
+.ui-v2 .pbuy { MARGIN-TOP: 6px; DISPLAY: flex; ALIGN-ITEMS: center; GAP: 10px; }
+.ui-v2 .pbuy-label { FONT-SIZE: 13px; COLOR: var(--text-600); }
+.ui-v2 .pbuy-num {
+	WIDTH: 58px;
+	HEIGHT: 36px;
+	TEXT-ALIGN: center;
+	BORDER: 1px solid var(--line);
+	BORDER-RADIUS: 6px;
+	FONT-SIZE: 14px;
+	COLOR: var(--text-900);
+}
+.ui-v2 .pbuy-num:focus { BORDER-COLOR: var(--brand-600); OUTLINE: none; }
+.ui-v2 .btn-buy {
+	DISPLAY: inline-block;
+	HEIGHT: 40px;
+	LINE-HEIGHT: 40px;
+	PADDING: 0 28px;
+	BORDER-RADIUS: 20px;
+	BACKGROUND: var(--brand-600);
+	COLOR: #FFFFFF !important;
+	FONT-SIZE: 14px;
+	FONT-WEIGHT: 500;
+}
+.ui-v2 .btn-buy:hover { BACKGROUND: var(--brand-700); COLOR: #FFFFFF !important; }
+
+/* ---------- 表格型信息（规格行） ---------- */
+.ui-v2 .pinfo TD { PADDING: 3px 0; COLOR: var(--text-600); FONT-SIZE: 13px; }
+
+/* ---------- 页脚 ---------- */
+.ui-v2 .footBox { BORDER-TOP: 1px solid var(--line); MARGIN-TOP: 16px; PADDING-TOP: 12px; }
+.ui-v2 .footBox TD { FONT-SIZE: 12px; COLOR: var(--text-400); }
+
+/* ---------- 窄屏 ---------- */
+@media (max-width: 768px) {
+	.ui-v2 .pcard {
+		WIDTH: calc(50% - 5px);
+		MARGIN: 0 5px 10px 0;
+		PADDING: 8px;
+		BORDER: 1px solid var(--line);
+		BORDER-RADIUS: 8px;
+	}
+	.ui-v2 .pcard:nth-of-type(2n) { MARGIN-RIGHT: 0; }
+	.ui-v2 .pcard:hover { BOX-SHADOW: none; }
+	.ui-v2 .pcard-pic { HEIGHT: 150px; }
+	.ui-v2 TABLE[background*="bgtop"] { HEIGHT: auto !important; PADDING: 6px 0; }
+	.ui-v2 #proname { WIDTH: 100% !important; BOX-SIZING: border-box; MARGIN: 6px 0; }
+	.ui-v2 .pdetail-name { FONT-SIZE: 17px; }
+	.ui-v2 .pdetail-price .now { FONT-SIZE: 24px; }
+}
+
+@media (max-width: 480px) {
+	.ui-v2 .pcard { WIDTH: 100%; MARGIN: 0 0 10px 0; }
+	.ui-v2 .pcard-pic { HEIGHT: 200px; }
+}
+
+/* =============================================================
+   骨架精修：容器自适应、去掉模板装饰线、侧栏与页脚收口
+   ============================================================= */
+
+.ui-v2 TABLE[width="1006"] { WIDTH: 1006px !important; MARGIN-LEFT: auto; MARGIN-RIGHT: auto; }
+.ui-v2 TD[width="787"] { WIDTH: 787px !important; }
+.ui-v2 TD[width="188"] { WIDTH: 188px !important; }
+
+.ui-v2 .heroWrap { HEIGHT: auto !important; MARGIN: 10px auto 0 auto; }
+.ui-v2 .heroImg {
+	WIDTH: 100% !important;
+	HEIGHT: 104px !important;
+	OBJECT-FIT: cover;
+	OBJECT-POSITION: center 40%;
+	DISPLAY: block;
+	BORDER-RADIUS: 12px;
+}
+
+.ui-v2 IMG[src*="new_top_li"],
+.ui-v2 IMG[src*="new_line"],
+.ui-v2 IMG[src*="gongji_06"],
+.ui-v2 IMG[src*="xian.gif"] { DISPLAY: none !important; }
+.ui-v2 TD[background*="new_top_li"] {
+	BACKGROUND: transparent !important;
+	HEIGHT: 0 !important;
+	PADDING: 0 !important;
+	FONT-SIZE: 0;
+	LINE-HEIGHT: 0;
+}
+
+.ui-v2 .navWrap { MARGIN-TOP: 10px; }
+.ui-v2 TABLE[background*="bgtop"] { BORDER-RADIUS: 10px; }
+.ui-v2 TABLE[background*="bgtop"] TD { PADDING: 0 7px; }
+
+.ui-v2 .sideCol {
+	BACKGROUND: #FFFFFF;
+	BORDER: 1px solid var(--line);
+	BORDER-RADIUS: 12px;
+	PADDING: 6px 0 10px 0;
+}
+.ui-v2 .sideCol TD[height="15"] { HEIGHT: 0 !important; }
+.ui-v2 .sideCol TD[background] {
+	BACKGROUND: transparent !important;
+	TEXT-ALIGN: left !important;
+	PADDING-LEFT: 14px !important;
+}
+.ui-v2 .sideCol STRONG { FONT-WEIGHT: 400; FONT-SIZE: 14px; COLOR: var(--text-900); }
+.ui-v2 .sideCol A {
+	FONT-SIZE: 13px;
+	COLOR: var(--text-600);
+	LINE-HEIGHT: 2.1;
+	DISPLAY: inline-block;
+	MAX-WIDTH: 176px;
+	OVERFLOW: hidden;
+	TEXT-OVERFLOW: ellipsis;
+	WHITE-SPACE: nowrap;
+}
+.ui-v2 .sideCol A:hover { COLOR: var(--brand-600); }
+
+.ui-v2 .footDeco { DISPLAY: none; }
+.ui-v2 .footInfo {
+	BORDER-TOP: 1px solid var(--line);
+	MARGIN-TOP: 30px;
+	PADDING-TOP: 18px;
+}
+.ui-v2 .footInfo TD { FONT-SIZE: 12px; COLOR: var(--text-400); LINE-HEIGHT: 2; }
+.ui-v2 .footInfo A FONT { COLOR: var(--text-400) !important; }
+.ui-v2 .footInfo IMG[src*="adminlogo"] { WIDTH: 150px !important; HEIGHT: auto !important; }
+
+.ui-v2 .pcard-wrap { WIDTH: auto !important; }
+
+@media (min-width: 769px) {
+	.ui-v2 .pcard {
+		WIDTH: calc(25% - 12px);
+		MARGIN: 0 6px 22px 6px;
+		PADDING: 0;
+		BORDER: 0;
+		BORDER-RADIUS: 0;
+		BACKGROUND: transparent;
+		TEXT-ALIGN: left;
+	}
+	.ui-v2 .pcard:hover { BOX-SHADOW: none; BORDER-COLOR: transparent; }
+	.ui-v2 .pcard-pic {
+		HEIGHT: auto;
+		ASPECT-RATIO: 1 / 1;
+		BORDER-RADIUS: 10px;
+		BACKGROUND: var(--bg-soft);
+		TRANSITION: box-shadow .2s ease;
+	}
+	.ui-v2 .pcard:hover .pcard-pic { BOX-SHADOW: 0 10px 24px rgba(31, 41, 55, .09); }
+	.ui-v2 .pcard-name { MARGIN-TOP: 12px; FONT-SIZE: 13px; }
+	.ui-v2 .pcard-btn {
+		BACKGROUND: transparent;
+		BORDER: 1px solid #CFDBCF;
+		COLOR: var(--brand-600) !important;
+		BORDER-RADIUS: 6px;
+		MARGIN-TOP: 12px;
+	}
+	.ui-v2 .pcard-btn:hover { BACKGROUND: var(--brand-600); BORDER-COLOR: var(--brand-600); COLOR: #FFFFFF !important; }
+}
+
+/* 页面左右留白 + 侧栏标题与列表密度修正 */
+.ui-v2 { PADDING: 0; BOX-SIZING: border-box; }
+.ui-v2 TABLE[width="1006"] { MARGIN-LEFT: auto; MARGIN-RIGHT: auto; }
+.ui-v2 .sideCol TD[background*="bgtop"] {
+	WIDTH: auto !important;
+	WHITE-SPACE: nowrap;
+	PADDING: 12px 0 8px 14px !important;
+	TEXT-ALIGN: left !important;
+}
+.ui-v2 .sideCol A { LINE-HEIGHT: 1.9; PADDING: 3px 0; BORDER-BOTTOM: 1px dashed #F0F0EE; WIDTH: 100%; BOX-SIZING: border-box; }
+.ui-v2 .sideCol TR:last-child A { BORDER-BOTTOM: 0; }
+
+/* 首页轮播（原 IE 滤镜组件）：收掉灰底页码条与直角边框 */
+.ui-v2 DIV[style*="#888888"] { DISPLAY: none !important; }
+.ui-v2 DIV[style*="width:800px"] {
+	WIDTH: 100% !important;
+	HEIGHT: auto !important;
+	BORDER-RADIUS: 12px;
+	OVERFLOW: hidden;
+}
+.ui-v2 DIV[style*="width:800px"] IMG { WIDTH: 100% !important; HEIGHT: auto !important; DISPLAY: block; }
+
+/* 横幅：与页面顶部留出呼吸、降低高度 */
+.ui-v2 .heroWrap { MARGIN: 16px auto 0 auto !important; }
+.ui-v2 .heroImg { HEIGHT: 96px !important; }
+.ui-v2 .navWrap { MARGIN-TOP: 12px; }
+
+/* 窄屏：把上面写死的桌面宽度让回去，避免横向滚动 */
+@media (max-width: 768px) {
+	.ui-v2 TABLE[width="1006"] { WIDTH: 100% !important; }
+	.ui-v2 TD[width="787"] { WIDTH: auto !important; }
+	.ui-v2 TD[width="188"] { WIDTH: auto !important; }
+	.ui-v2 .heroWrap { MARGIN: 8px 0 0 0 !important; }
+	.ui-v2 .heroImg { HEIGHT: 72px !important; BORDER-RADIUS: 8px; }
+}
+
+/* =============================================================
+   内容页：数据表格 / 表单 / 老式商品卡统一（留言板、购物车、订单、搜索等）
+   ============================================================= */
+
+.ui-v2 TABLE[bgcolor="#cccccc"] {
+	BACKGROUND: transparent !important;
+	BORDER-COLLAPSE: collapse;
+	WIDTH: 100% !important;
+}
+.ui-v2 TABLE[bgcolor="#cccccc"] TD {
+	PADDING: 11px 12px !important;
+	BORDER-BOTTOM: 1px solid var(--line);
+	BACKGROUND: #FFFFFF !important;
+	FONT-SIZE: 13px;
+	COLOR: var(--text-900);
+}
+.ui-v2 TABLE[bgcolor="#cccccc"] TR:first-child TD {
+	BACKGROUND: var(--bg-soft) !important;
+	COLOR: var(--text-600);
+	FONT-WEIGHT: 500;
+	BORDER-BOTTOM: 1px solid var(--line);
+}
+.ui-v2 TABLE[bgcolor="#cccccc"] TR:not(:first-child):hover TD { BACKGROUND: #FBFCFB !important; }
+
+/* 表单 */
+.ui-v2 INPUT[type="text"], .ui-v2 INPUT[type="password"] {
+	HEIGHT: 36px;
+	PADDING: 0 12px;
+	BORDER: 1px solid var(--line);
+	BORDER-RADIUS: 8px;
+	FONT-SIZE: 14px;
+	COLOR: var(--text-900);
+	BOX-SIZING: border-box;
+}
+.ui-v2 INPUT[type="text"]:focus, .ui-v2 INPUT[type="password"]:focus {
+	BORDER-COLOR: var(--brand-600);
+	OUTLINE: none;
+	BOX-SHADOW: 0 0 0 3px rgba(39, 103, 73, .12);
+}
+.ui-v2 INPUT[type="submit"] {
+	HEIGHT: 36px;
+	PADDING: 0 22px;
+	BORDER: 0;
+	BORDER-RADIUS: 8px;
+	BACKGROUND: var(--brand-600);
+	COLOR: #FFFFFF;
+	FONT-SIZE: 14px;
+	CURSOR: pointer;
+}
+.ui-v2 INPUT[type="submit"]:hover { BACKGROUND: var(--brand-700); }
+.ui-v2 INPUT[type="reset"] {
+	HEIGHT: 36px;
+	PADDING: 0 20px;
+	BORDER: 1px solid var(--line);
+	BORDER-RADIUS: 8px;
+	BACKGROUND: #FFFFFF;
+	COLOR: var(--text-600);
+	FONT-SIZE: 14px;
+	CURSOR: pointer;
+}
+.ui-v2 TEXTAREA {
+	WIDTH: 100%;
+	MIN-HEIGHT: 110px;
+	PADDING: 10px 12px;
+	BORDER: 1px solid var(--line);
+	BORDER-RADIUS: 8px;
+	FONT-SIZE: 14px;
+	FONT-FAMILY: inherit;
+	BOX-SIZING: border-box;
+}
+.ui-v2 INPUT.pbuy-num { WIDTH: 64px !important; PADDING: 0 !important; TEXT-ALIGN: center; }
+
+/* 老式商品卡（搜索 / 更多商品 / 热销 / 公益售卖）向 .pcard 靠拢 */
+@media (min-width: 769px) {
+	.ui-v2 DIV[style*="200px"] {
+		WIDTH: calc(25% - 12px) !important;
+		MARGIN: 0 6px 22px 6px !important;
+		HEIGHT: auto !important;
+		TEXT-ALIGN: left !important;
+	}
+	.ui-v2 DIV[style*="200px"] TABLE {
+		WIDTH: 100% !important;
+		HEIGHT: auto !important;
+		BACKGROUND: transparent !important;
+	}
+	.ui-v2 DIV[style*="200px"] TD {
+		WIDTH: auto !important;
+		HEIGHT: auto !important;
+		PADDING: 0 !important;
+		BACKGROUND: transparent !important;
+		TEXT-ALIGN: left !important;
+		VERTICAL-ALIGN: top;
+	}
+	.ui-v2 DIV[style*="200px"] IMG[width="150"] {
+		WIDTH: 100% !important;
+		HEIGHT: auto !important;
+		ASPECT-RATIO: 1 / 1;
+		OBJECT-FIT: contain;
+		BACKGROUND: var(--bg-soft);
+		BORDER: 0;
+		BORDER-RADIUS: 10px;
+		PADDING: 0;
+		DISPLAY: block;
+	}
+	.ui-v2 DIV[style*="200px"] IMG[src*="index_29"] { DISPLAY: none !important; }
+	.ui-v2 DIV[style*="200px"] A:has(IMG[src*="index_29"]) {
+		DISPLAY: block;
+		HEIGHT: 32px;
+		LINE-HEIGHT: 32px;
+		MARGIN-TOP: 12px;
+		BORDER: 1px solid #CFDBCF;
+		BORDER-RADIUS: 6px;
+		TEXT-ALIGN: center;
+		COLOR: var(--brand-600);
+		FONT-SIZE: 13px;
+	}
+	.ui-v2 DIV[style*="200px"] A:has(IMG[src*="index_29"])::before { CONTENT: "查看详情"; }
+	.ui-v2 DIV[style*="200px"] .style4 {
+		FONT-SIZE: 17px !important;
+		FONT-WEIGHT: 500;
+		COLOR: var(--price) !important;
+		MARGIN: 8px 0 0 0;
+	}
+	.ui-v2 DIV[style*="200px"] TD[height="18"] A {
+		FONT-SIZE: 13px;
+		COLOR: var(--text-900);
+		LINE-HEIGHT: 1.6;
+	}
+}
+
+/* 分页下拉、侧栏密度、公告/详情正文 */
+.ui-v2 SELECT {
+	HEIGHT: 30px;
+	PADDING: 0 8px;
+	BORDER: 1px solid var(--line);
+	BORDER-RADIUS: 6px;
+	BACKGROUND: #FFFFFF;
+	FONT-SIZE: 13px;
+	COLOR: var(--text-600);
+	VERTICAL-ALIGN: middle;
+}
+.ui-v2 .sideCol TD { PADDING: 0; }
+.ui-v2 .sideCol TD[width="19"] { DISPLAY: none; }
+.ui-v2 .sideCol A { BORDER-BOTTOM: 0; }
+.ui-v2 .footInfo TD { VERTICAL-ALIGN: top; }
+
+/* 登录 / 注册表单字段宽度 */
+.ui-v2 #uname, .ui-v2 #upass, .ui-v2 #upass1 { WIDTH: 280px; }
+.ui-v2 #yzm { WIDTH: 110px; }
+
+/* 页脚：后台管理入口靠右，与地址块分离 */
+.ui-v2 .footInfo TD > TABLE:first-of-type { WIDTH: 100% !important; }
+.ui-v2 .footInfo TD > TABLE:first-of-type TD { TEXT-ALIGN: right; PADDING-BOTTOM: 8px; }
+
+/* 商品卡图区固定为正方形（避免 aspect-ratio 被图片固有尺寸撑开） */
+@media (min-width: 769px) {
+	.ui-v2 .pcard-pic { HEIGHT: 190px; }
+}
+
+/* =============================================================
+   顶部账号条：登录 / 注册 / 后台管理 的层级
+   登录=文字链，注册=主按钮，后台管理=弱化的工具入口（分隔线隔开）
+   ============================================================= */
+.ui-v2 .topbar { PADDING: 10px 10px 12px 10px; }
+.ui-v2 .tbLink {
+	DISPLAY: inline-block;
+	HEIGHT: 30px;
+	LINE-HEIGHT: 30px;
+	PADDING: 0 10px;
+	FONT-SIZE: 13px;
+	COLOR: var(--text-600) !important;
+}
+.ui-v2 .tbLink FONT { COLOR: var(--text-600) !important; FONT-SIZE: 13px !important; }
+.ui-v2 .tbLink:hover, .ui-v2 .tbLink:hover FONT { COLOR: var(--brand-600) !important; }
+
+.ui-v2 .tbBtn {
+	DISPLAY: inline-block;
+	HEIGHT: 30px;
+	LINE-HEIGHT: 30px;
+	PADDING: 0 18px;
+	MARGIN-LEFT: 4px;
+	BORDER-RADIUS: 15px;
+	BACKGROUND: var(--brand-600);
+	COLOR: #FFFFFF !important;
+	FONT-SIZE: 13px;
+	FONT-WEIGHT: 500;
+}
+.ui-v2 .tbBtn FONT { COLOR: #FFFFFF !important; FONT-SIZE: 13px !important; }
+.ui-v2 .tbBtn:hover { BACKGROUND: var(--brand-700); }
+.ui-v2 .tbBtn:hover FONT { COLOR: #FFFFFF !important; }
+
+.ui-v2 .tbAdmin {
+	DISPLAY: inline-block;
+	HEIGHT: 30px;
+	LINE-HEIGHT: 30px;
+	MARGIN-LEFT: 14px;
+	PADDING-LEFT: 14px;
+	BORDER-LEFT: 1px solid var(--line);
+	FONT-SIZE: 13px;
+	COLOR: var(--text-400) !important;
+}
+.ui-v2 .tbAdmin:hover { COLOR: var(--brand-600) !important; }
+
+/* 覆盖 .topbar A FONT 的灰色规则，保证主按钮文字为白色 */
+.ui-v2 .topbar A.tbBtn, .ui-v2 .topbar A.tbBtn FONT { COLOR: #FFFFFF !important; }
+.ui-v2 .topbar A.tbLink, .ui-v2 .topbar A.tbLink FONT { COLOR: var(--text-600) !important; }
+.ui-v2 .topbar A.tbAdmin { COLOR: var(--text-400) !important; }
+
+@media (max-width: 768px) {
+	.ui-v2 .topbar { TEXT-ALIGN: right; PADDING: 8px 10px; }
+	.ui-v2 .tbLink, .ui-v2 .tbBtn, .ui-v2 .tbAdmin { HEIGHT: 28px; LINE-HEIGHT: 28px; FONT-SIZE: 12px; }
+	.ui-v2 .tbBtn { PADDING: 0 14px; }
+	.ui-v2 .tbAdmin { MARGIN-LEFT: 8px; PADDING-LEFT: 8px; }
+}
